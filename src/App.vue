@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import WebApp from "@twa-dev/sdk";
 
 const count = ref(0);
 
@@ -13,24 +14,12 @@ function handleDecrement() {
 </script>
 
 <template>
-  <div class="bg-slate-700 p-4 flex flex-col">
-    <h1 class="text-orange-500 text-2xl">Counter</h1>
-  </div>
-  <div class="flex flex-col items-center gap-2 p-4">
-    <h1 class="text-2xl">{{ count }}</h1>
-    <div class="flex">
-      <button
-        class="border p-2 self-start rounded-sm"
-        @click="handleIncrement"
-      >
-        Increment
-      </button>
-      <button
-        class="border p-2 self-start rounded-sm"
-        @click="handleDecrement"
-      >
-        Decrement
-      </button>
-    </div>
+  <div class="flex justify-center items-center min-h-screen">
+    <button
+      class="border px-8 py-2 rounded-3xl text-[#fff] bg-[#08c] font-medium"
+      @click="WebApp.showAlert('Hello World!')"
+    >
+      Show Alert
+    </button>
   </div>
 </template>
